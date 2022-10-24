@@ -38,7 +38,13 @@ static inline miniGL_pos_t miniGL_pos (int8_t row, int8_t col)
  */
 void miniGL_show_bitmap (miniGL_bitmap_t bitmap)
 {
+    miniGL_clear();
 
+    for (uint8_t row = 0; row < MINIGL_HEIGHT; row++) {
+        for (uint8_t col = 0; col < MINIGL_WIDTH; col++) {
+            grid[col][row] = (bool)(bitmap[col] & BITMASK(row));
+        }
+    }
 }
 
 /**
