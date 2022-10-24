@@ -17,7 +17,6 @@
 
 typedef int8_t miniGL_pixel_value_t;
 
-
 /**
  * Define a position as a coordinate on the display.
  * The display origin is the top left corner.
