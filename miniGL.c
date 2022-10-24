@@ -9,6 +9,14 @@
 
 
 /**
+ * The display grid
+ * Array of display columns
+ * always index as grid[col][row]
+ */
+miniGL_pixel_value_t grid[MINIGL_WIDTH][MINIGL_HEIGHT];
+
+
+/**
  * @brief Construct a `miniGL_pos` from a pair of ordinates.
  *
  * @param row row of pixel
