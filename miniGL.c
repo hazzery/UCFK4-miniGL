@@ -127,7 +127,7 @@ void miniGL_draw_box (miniGL_pos_t top_left, miniGL_pos_t bottom_right, bool fil
  */
 void miniGL_clear (void)
 {
-
+    memset(grid, 0, MINIGL_WIDTH * MINIGL_HEIGHT);
 }
 
 
