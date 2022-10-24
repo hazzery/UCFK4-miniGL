@@ -17,6 +17,7 @@
 
 
 typedef int8_t miniGL_pixel_value_t;
+typedef uint8_t miniGL_bitmap_t[MINIGL_WIDTH];
 
 /**
  * Define a position as a coordinate on the display.
