@@ -24,8 +24,8 @@ typedef int8_t miniGL_pixel_value_t;
  */
 typedef struct miniGL_pos_s
 {
-    int8_t row;
     int8_t col;
+    int8_t row;
 } miniGL_pos_t;
 
 
