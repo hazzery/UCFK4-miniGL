@@ -100,7 +100,25 @@ void miniGL_draw_line (miniGL_pos_t start_pos, miniGL_pos_t end_pos, miniGL_pixe
  * @param pixel_value pixel value to draw box.  */
 void miniGL_draw_box (miniGL_pos_t top_left, miniGL_pos_t bottom_right, bool fill, miniGL_pixel_value_t pixel_value)
 {
-
+    if (fill) {
+        // Fill in every row of every column in box
+        for (int8_t col = top_left.col; col <= bottom_right.col; col ++) {
+            for (int8_t row = top_left.row; row <= bottom_right.row; row ++) {
+                grid[col][row] = pixel_value;
+            }
+        }
+    } else {
+        // Set vertical sides of box
+        for (int8_t row = top_left.row; row <= bottom_right.row; row ++) {
+            grid[top_left.col][row] = pixel_value;
+            grid[bottom_right.col][row] = pixel_value;
+        }
+        // Set horizontal sides of box
+        for (int8_t col = top_left.col + 1; col < bottom_right.col; col ++) {
+            grid[col][top_left.row] = pixel_value;
+            grid[col][bottom_right.row] = pixel_value;
+        }
+    }
 }
 
 
