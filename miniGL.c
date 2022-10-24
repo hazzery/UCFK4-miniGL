@@ -55,7 +55,7 @@ void miniGL_show_bitmap (miniGL_bitmap_t bitmap)
 */
 void miniGL_set_pixel (miniGL_pos_t pos, miniGL_pixel_value_t pixel_value)
 {
-
+    grid[pos.col][pos.row] = pixel_value;
 }
 
 
