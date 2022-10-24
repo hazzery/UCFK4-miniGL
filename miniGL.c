@@ -68,7 +68,26 @@ void miniGL_set_pixel (miniGL_pos_t pos, miniGL_pixel_value_t pixel_value)
  */
 void miniGL_draw_line (miniGL_pos_t start_pos, miniGL_pos_t end_pos, miniGL_pixel_value_t pixel_value)
 {
+    //Uses Bresenham's line algorithm
+    //Pseudo code found at:
+    //https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm#Algorithm_for_integer_arithmetic
 
+    const int8_t dx = end_pos.col - start_pos.col;
+    const int8_t dy = end_pos.row - start_pos.row;
+
+    int8_t difference = (2 * dy) - dx;
+
+    const int8_t col_increment = (dx < 0) ? -1 : 1;
+
+    int8_t row = start_pos.row;
+    for (int8_t col = start_pos.col; col < end_pos.col; col += col_increment) {
+        grid[col][row] = pixel_value;
+        if (difference > 0) {
+            row += 1;
+            difference -= 2 * dx;
+        }
+        difference += 2 * dy;
+    }
 }
 
 
