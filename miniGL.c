@@ -22,11 +22,11 @@ static inline miniGL_pos_t miniGL_pos (int8_t row, int8_t col)
 
 
 /**
- * @brief Draw character on the display.
+ * @brief Show bitmap on the display.
  *
- * @param character character to show on the display
+ * @param bitmap bitmap to be shown on the display
  */
-void miniGL_draw_char (char character)
+void miniGL_show_bitmap (miniGL_bitmap_t bitmap)
 {
 
 }

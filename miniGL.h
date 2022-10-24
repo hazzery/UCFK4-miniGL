@@ -31,11 +31,11 @@ typedef struct miniGL_pos_s
 
 
 /**
- * @brief Draw character on the display.
+ * @brief Show bitmap on the display.
  *
- * @param character character to show on the display
+ * @param bitmap bitmap to be shown on the display
  */
-void miniGL_draw_char (char character);
+void miniGL_show_bitmap (miniGL_bitmap_t bitmap);
 
 
 /**
