@@ -1,4 +1,5 @@
-/** @file   miniGL.c
+/**
+ *  @file   miniGL.c
  *  @author Harrison Parkes
  *  @date   23rd of October 2022
  *  @brief  Graphics library for matrix of single colour LEDs
