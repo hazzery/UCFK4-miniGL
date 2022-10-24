@@ -7,6 +7,8 @@
 
 #include "miniGL.h"
 
+#define BITMASK(x) (1 << (x))
+
 
 /**
  * The display grid
