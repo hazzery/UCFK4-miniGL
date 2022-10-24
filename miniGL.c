@@ -136,7 +136,19 @@ void miniGL_clear (void)
  */
 void miniGL_update (void)
 {
+    static uint8_t counter = 0;
+    static uint8_t column = 0;
 
+    int8_t column_states[MINIGL_HEIGHT] = {0};
+
+    for (uint8_t row = 0; row < MINIGL_HEIGHT; row++) {
+        column_states[row] = (ABS(grid[column][row]) > counter);
+    }
+
+    matrix_show_column(column, column_states);
+
+    counter = (counter + 1) % 128;
+    column = (column + 1) % MINIGL_WIDTH;
 }
 
 
