@@ -6,8 +6,11 @@
 */
 
 #include "miniGL.h"
+#include "matrix_display.h"
+#include <string.h>
 
 #define BITMASK(x) (1 << (x))
+#define ABS(x) (x < 0 ? -x : x)
 
 
 /**
@@ -157,5 +160,5 @@ void miniGL_update (void)
  */
 void miniGL_init (uint16_t frequency)
 {
-
+    matrix_init();
 }
