@@ -35,7 +35,7 @@ typedef struct miniGL_pos_s
  *
  * @param bitmap bitmap to be shown on the display
  */
-void miniGL_show_bitmap (miniGL_bitmap_t bitmap);
+extern void miniGL_show_bitmap (miniGL_bitmap_t bitmap);
 
 
 /**
@@ -44,7 +44,7 @@ void miniGL_show_bitmap (miniGL_bitmap_t bitmap);
  * @param pos position of pixel to set
  * @param pixel_value value to set pixel to
 */
-void miniGL_set_pixel (miniGL_pos_t pos, miniGL_pixel_value_t pixel_value);
+extern void miniGL_set_pixel (miniGL_pos_t pos, miniGL_pixel_value_t pixel_value);
 
 
 /**
@@ -54,7 +54,7 @@ void miniGL_set_pixel (miniGL_pos_t pos, miniGL_pixel_value_t pixel_value);
  * @param end_pos position of the end of the line
  * @param pixel_value value to set all pixels to
  */
-void miniGL_draw_line (miniGL_pos_t start_pos, miniGL_pos_t end_pos, miniGL_pixel_value_t pixel_value);
+extern void miniGL_draw_line (const miniGL_pos_t start_pos, const miniGL_pos_t end_pos, const miniGL_pixel_value_t pixel_value);
 
 
 /**
@@ -64,24 +64,24 @@ void miniGL_draw_line (miniGL_pos_t start_pos, miniGL_pos_t end_pos, miniGL_pixe
  * @param bottom_right position of bottom right corner of box
  * @param fill `true` to fill in box, or `false` for just outline
  * @param pixel_value pixel value to draw box.  */
-void miniGL_draw_box (miniGL_pos_t top_left, miniGL_pos_t bottom_right, bool fill, miniGL_pixel_value_t pixel_value);
+extern void miniGL_draw_box (miniGL_pos_t top_left, miniGL_pos_t bottom_right, bool fill, miniGL_pixel_value_t pixel_value);
 
 
 /**
  * @brief Turn off all pixels on the display
  */
-void miniGL_clear (void);
+extern void miniGL_clear (void);
 
 
 /**
  * @brief Update pixels on the matrix display
  */
-void miniGL_update (void);
+extern void miniGL_update (void);
 
 
 /**
  * @brief Initialise the display matrix
  */
-void miniGL_init (uint16_t frequency);
+extern void miniGL_init (void);
 
 #endif // MINIGL_H

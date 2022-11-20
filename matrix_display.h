@@ -14,7 +14,7 @@
  * @brief Set all matrix PIO pins as outputs
  * and turns them all off
  */
-void matrix_init();
+extern void matrix_init(void);
 
 
 /**
@@ -23,6 +23,6 @@ void matrix_init();
  * @param column the column number to be shown
  * @param column_vals array of pixel values to shown on display column
  */
-void matrix_show_column(uint8_t column, int8_t column_vals[]);
+extern void matrix_show_column(uint8_t column, int8_t column_vals[7]);
 
 #endif //MATRIX_DISPLAY_H
