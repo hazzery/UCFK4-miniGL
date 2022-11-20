@@ -158,7 +158,8 @@ void miniGL_update (void)
 /**
  * @brief Initialise the display matrix
  */
-void miniGL_init (uint16_t frequency)
+void miniGL_init (void)
 {
     matrix_init();
+    miniGL_clear();
 }
