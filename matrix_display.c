@@ -61,6 +61,8 @@ void matrix_show_column(uint8_t column, int8_t column_vals[MATRIX_NUM_ROWS])
         pio_output_set(matrix_rows[row], !(column_vals[row]));
     }
 
-    prev_column = (prev_column + 1) % MATRIX_NUM_COLS;
+    pio_output_low(matrix_cols[column]);
+
+    prev_column = column;
 }
 
