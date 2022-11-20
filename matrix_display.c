@@ -54,11 +54,11 @@ void matrix_init(void)
 void matrix_show_column(uint8_t column, int8_t column_vals[MATRIX_NUM_ROWS])
 {
     static uint8_t prev_column = 0;
-    pio_output_low(matrix_cols[prev_column]);
-    pio_output_low(matrix_cols[column]);
+    pio_output_high(matrix_cols[prev_column]);
+    pio_output_high(matrix_cols[column]);
 
     for (uint8_t row = 0; row < MATRIX_NUM_ROWS; row++) {
-        pio_output_set(matrix_rows[row], column_vals[row]);
+        pio_output_set(matrix_rows[row], !(column_vals[row]));
     }
 
     prev_column = (prev_column + 1) % MATRIX_NUM_COLS;
