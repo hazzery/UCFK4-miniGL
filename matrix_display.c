@@ -35,7 +35,7 @@ static const pio_t matrix_cols[] = {
  * @brief Set all matrix PIO pins as outputs
  * and turns them all off
  */
-void matrix_init()
+void matrix_init(void)
 {
     // Pins initialized to HIGH as they're active low
     for (uint8_t row = 0; row < MATRIX_NUM_ROWS; row++)
