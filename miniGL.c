@@ -28,7 +28,7 @@ miniGL_pixel_value_t grid[MINIGL_WIDTH][MINIGL_HEIGHT];
  * @param col column of pixel
  * @return a `miniGL_pos` representing (col, row)
 */
-static inline miniGL_pos_t miniGL_pos (int8_t row, int8_t col)
+static inline miniGL_pos_t miniGL_pos (const int8_t row, const int8_t col)
 {
     return (miniGL_pos_t) {.row = row, .col = col};
 }
@@ -39,7 +39,7 @@ static inline miniGL_pos_t miniGL_pos (int8_t row, int8_t col)
  *
  * @param bitmap bitmap to be shown on the display
  */
-void miniGL_show_bitmap (miniGL_bitmap_t bitmap)
+void miniGL_show_bitmap (const miniGL_bitmap_t bitmap)
 {
     miniGL_clear();
 
@@ -56,7 +56,7 @@ void miniGL_show_bitmap (miniGL_bitmap_t bitmap)
  * @param pos position of pixel to set
  * @param pixel_value value to set pixel to
 */
-void miniGL_set_pixel (miniGL_pos_t pos, miniGL_pixel_value_t pixel_value)
+void miniGL_set_pixel (const miniGL_pos_t pos, const miniGL_pixel_value_t pixel_value)
 {
     grid[pos.col][pos.row] = pixel_value;
 }
@@ -69,7 +69,7 @@ void miniGL_set_pixel (miniGL_pos_t pos, miniGL_pixel_value_t pixel_value)
  * @param end_pos position of the end of the line
  * @param pixel_value value to set all pixels to
  */
-void miniGL_draw_line (miniGL_pos_t start_pos, miniGL_pos_t end_pos, miniGL_pixel_value_t pixel_value)
+void miniGL_draw_line (const miniGL_pos_t start_pos, const miniGL_pos_t end_pos, const miniGL_pixel_value_t pixel_value)
 {
     //Uses Bresenham's line algorithm
     //Pseudo code found at:
@@ -101,7 +101,7 @@ void miniGL_draw_line (miniGL_pos_t start_pos, miniGL_pos_t end_pos, miniGL_pixe
  * @param bottom_right position of bottom right corner of box
  * @param fill `true` to fill in box, or `false` for just outline
  * @param pixel_value pixel value to draw box.  */
-void miniGL_draw_box (miniGL_pos_t top_left, miniGL_pos_t bottom_right, bool fill, miniGL_pixel_value_t pixel_value)
+void miniGL_draw_box (const miniGL_pos_t top_left, const miniGL_pos_t bottom_right, const bool fill, const miniGL_pixel_value_t pixel_value)
 {
     if (fill) {
         // Fill in every row of every column in box

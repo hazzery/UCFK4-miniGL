@@ -51,7 +51,7 @@ void matrix_init(void)
  * @param column the column number to be shown
  * @param column_vals array of pixel values to shown on display column
  */
-void matrix_show_column(uint8_t column, int8_t column_vals[MATRIX_NUM_ROWS])
+void matrix_show_column(const uint8_t column, const int8_t column_vals[MATRIX_NUM_ROWS])
 {
     static uint8_t prev_column = 0;
     pio_output_high(matrix_cols[prev_column]);

@@ -35,7 +35,7 @@ typedef struct miniGL_pos_s
  *
  * @param bitmap bitmap to be shown on the display
  */
-extern void miniGL_show_bitmap (miniGL_bitmap_t bitmap);
+extern void miniGL_show_bitmap (const miniGL_bitmap_t bitmap);
 
 
 /**
@@ -44,7 +44,7 @@ extern void miniGL_show_bitmap (miniGL_bitmap_t bitmap);
  * @param pos position of pixel to set
  * @param pixel_value value to set pixel to
 */
-extern void miniGL_set_pixel (miniGL_pos_t pos, miniGL_pixel_value_t pixel_value);
+extern void miniGL_set_pixel (const miniGL_pos_t pos, const miniGL_pixel_value_t pixel_value);
 
 
 /**
@@ -64,7 +64,7 @@ extern void miniGL_draw_line (const miniGL_pos_t start_pos, const miniGL_pos_t e
  * @param bottom_right position of bottom right corner of box
  * @param fill `true` to fill in box, or `false` for just outline
  * @param pixel_value pixel value to draw box.  */
-extern void miniGL_draw_box (miniGL_pos_t top_left, miniGL_pos_t bottom_right, bool fill, miniGL_pixel_value_t pixel_value);
+extern void miniGL_draw_box (const miniGL_pos_t top_left, const miniGL_pos_t bottom_right, const bool fill, const miniGL_pixel_value_t pixel_value);
 
 
 /**

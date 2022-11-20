@@ -23,6 +23,6 @@ extern void matrix_init(void);
  * @param column the column number to be shown
  * @param column_vals array of pixel values to shown on display column
  */
-extern void matrix_show_column(uint8_t column, int8_t column_vals[7]);
+extern void matrix_show_column(const uint8_t column, const int8_t column_vals[7]);
 
 #endif //MATRIX_DISPLAY_H
