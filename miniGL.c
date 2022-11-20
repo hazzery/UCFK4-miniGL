@@ -145,7 +145,7 @@ void miniGL_update (void)
     int8_t column_states[MINIGL_HEIGHT] = {0};
 
     for (uint8_t row = 0; row < MINIGL_HEIGHT; row++) {
-        column_states[row] = (ABS(grid[column][row]) > counter);
+        column_states[row] = (ABS(grid[column][row]) >= counter);
     }
 
     matrix_show_column(column, column_states);
